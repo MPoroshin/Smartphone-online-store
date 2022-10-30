@@ -27,6 +27,8 @@ class Good(db.Model):
 
 
 
+
+
 @app.route('/', methods=['post', 'get'])
 @app.route('/home', methods=['post', 'get'])
 def main():
@@ -37,10 +39,22 @@ def main():
 @app.route('/product-page', methods=['post', 'get'])
 def productPage():
     goodID = ''
-    if request.method == 'POST':
-        goodID = request.form.get('good_id')
+    if request.method == 'GET':
+        goodID = request.args.get('good_id')
 
-    good = db.session.query(Good.good_id, Good.title,  Good.price, Good.photo).filter(Good.good_id == f'{goodID}').all()
+    #good = db.session.query(Good).filter(Good.good_id == f'{goodID}')
+
+    #good = Good.query.all()
+    """
+    good = [i.__dict__ for i in good][0]
+    good.pop('_sa_instance_state')
+    good.pop('photo')
+    good.pop('good_id')"""
+
+    good = db.session.query(Good).filter(Good.good_id == f'{goodID}').all()[0]
+
+
+
     return render_template('product_page.html', good=good)
 
 

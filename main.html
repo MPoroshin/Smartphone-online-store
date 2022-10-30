@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_card.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/filter_bar.css') }}">
+{% endblock %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+
+
+
+{% block body %}
+    <div class="container">
+        <div class="filter-bar">
+
+        </div>
+        <div class="grid">
+            {% for good in goods %}
+                <div class="product-card">
+                    <form action="/product-page" method="get">
+                        <button class="product_button">
+                            <div class="imageGood">
+                                <img class="good" src="/static/images/{{ good.photo }}" alt="">
+                            </div>
+                            <div class="titleGood">
+                                <span>{{ good.title }}</span>
+                            </div>
+                        </button>
+                        <input type="hidden" name="good_id" value="{{ good.good_id }}">
+                    </form>
+
+                    <div class="info">
+                        <div class="div-price">
+                            <span class="price">{{ good.price }}<small> ₽</small></span>
+                        </div>
+                        <div class="div-button">
+                            <button class="add-to-cart">
+                            <img class="cart" src="/static/images/cart.png" alt="">
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

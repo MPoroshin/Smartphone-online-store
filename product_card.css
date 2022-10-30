@@ -1,0 +1,111 @@
+.grid {
+    text-align: center;
+    width: 83%;
+    height:auto;
+}
+
+.product-card {
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    background: #C0C0C0;
+    overflow:hidden;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0.1px gray;
+}
+.product-card:hover {
+    box-shadow: 0px 0px 7px 3px gray;
+    transition: all 0.5s ease
+}
+
+
+
+
+.good {
+    height: 250px;
+    width: 250px;
+    border-radius: 20px;
+
+}
+
+.titleGood {
+    height: 80px;
+    font-size:150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    text-align: center;
+}
+
+.titleGood span {
+    width: 60%;
+}
+
+
+
+
+.info {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.price {
+    font-weight:bold;
+    font-size:145%;
+
+}
+
+.add-to-cart {
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: #C0C0C0;
+    margin-left: 40px;
+}
+
+.add-to-cart:hover {
+    background: #A9A9A9;
+    transition: all 0.5s ease
+}
+
+.add-to-cart:active {
+    background: #808080;
+    transition: all 0.1s ease
+}
+
+
+.cart {
+    height: 30px;
+    width: 30px;
+    border-radius: 16px;
+    margin-right: 1px;
+    margin-top: 1px;
+}
+
+
+.imageGood {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 1px gray;
+}
+
+.div-price {
+    width: 50%;
+    margin-left: 10px;
+}
+.div-button {
+    width: 50%;
+}
+
+.product_button {
+    background: transparent;
+    border: none;
+    padding: 0px;
+    border-radius: 20px;
+
+}
