@@ -1,5 +1,10 @@
 .filter-bar {
+    display: flex;
+    flex-direction: column;
     background: #C0C0C0;
     width: 17%;
-    display: inline-block;
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: -65px;
+    min-height: 100vh;
 }

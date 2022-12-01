@@ -3,8 +3,7 @@
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: calc(100% - 65px);
-
+    min-height: calc(100% - 65px - 50px);
 }
 
 .product {
@@ -23,16 +22,13 @@
     box-shadow: 0px 0px 10px 0.1px gray;
 }
 
-.product-page-card:hover {
-    transition: all 0.5s ease;
-    box-shadow: 0px 0px 10px 1px gray;
-
-}
 
 .div-info {
     display: inline-block;
     width: 380px;
     height: 360px;
+    user-select: none;
+    position:relative;
 
 }
 .div-image {
@@ -59,10 +55,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 420px;
+    width: 320px;
     background: #C0C0C0;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 50px;
     border-radius: 11px;
     box-shadow: 0px 0px 10px 0.1px gray;
 
@@ -75,9 +71,9 @@
     position: absolute;
     background: #C0C0C0;
     border-radius: 11px;
-    width: 100%;
-
-    margin-left: 160px;
+    width: 180px;
+    right: 0;
+    transition: 0.5s;
     border-radius: 0px 11px 11px 0px;
     box-shadow: 0px 0px 5px 0.1px gray;
 }
@@ -99,33 +95,103 @@
     border-radius: 11px;
     box-shadow: 1px 0px 7px 0.1px gray;
     z-index:1;
-    margin-right: 150px;
+    left: 0;
+    transition: 0.5s;
 }
 
 .order:hover {
-    background: #DCDCDC;
+    background: #F5F5F5;
     box-shadow: 0px 0px 10px 0.5px gray;
     transition: all 0.5s ease
 
 }
 .order:active {
-    background: #A9A9A9;
+    background: #D3D3D3;
     transition: all 0.1s ease
 }
 .button-order {
     font-weight: 600;
-    width: 100%;
+    width: 150px;
     height: 40px;
     background: transparent;
     border: none;
+    font-size:89%;
 }
 .button-cart {
     font-weight: 600;
-    width: 420px;
+
+    width: 180px;
     height: 40px;
     background: transparent;
     border: none;
+    margin-left: 5px;
+    font-size:89%;
 }
-.span-cart {
-    margin-left
+
+.back-div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+.back {
+    margin-left: 15px;
+    width: 200px;
+    display: inline-block;
+    font-size:100%;
+    font-weight: 600;
+    transition: 0.5s;
+    background: transparent;
+    border: none;
+
+}
+.back:hover {
+    transition: all 0.2s ease;
+    font-size:101%;
+}
+
+
+.good-title {
+    font-size:151%;
+    list-style: none;
+    margin: 0;
+    font-weight: 600;
+}
+.good-characteristic {
+    font-size:101%;
+    list-style: none;
+    margin: 0;
+}
+.good-price {
+    font-size:151%;
+    list-style: none;
+    margin: 0;
+    font-weight: 600;
+}
+
+
+
+
+
+
+.div-info-title {
+    position:absolute;
+    top:0;
+    width: 90%;
+
+
+}
+.div-info-characteristic {
+    position:absolute;
+    top:50%;
+    left:28%;
+    transform:translate(-50%, -50%);
+
+
+
+}
+.div-info-price {
+    position:absolute;
+    bottom: 0;
+    width: 90%;
 }

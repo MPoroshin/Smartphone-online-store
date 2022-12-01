@@ -1,26 +1,8 @@
 from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
-db = SQLAlchemy(app)
-
-
-#console comands
-"""
-python
-from app import db
-db.create_all()
-exit()
-"""
-
-class Good(db.Model):
-    good_id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
-    photo = db.Column(db.String(50), nullable=False)
-
+from model import *
+from flask import session
+import os
 
 
 
@@ -30,9 +12,25 @@ class Good(db.Model):
 
 
 @app.route('/', methods=['post', 'get'])
-@app.route('/home', methods=['post', 'get'])
 def main():
+
+
+
     goods = db.session.query(Good.good_id, Good.title,  Good.price, Good.photo).all()
+
+    if 'cart' not in session:
+        keys = [str(i.good_id) for i in goods]
+        session['cart'] = dict.fromkeys(keys, 0)
+        session.modified = True
+
+    if request.method == 'POST':
+        goodID = request.form['good_id']
+        newDict = session['cart']
+        newDict[goodID] += 1
+        session['cart'] = newDict
+
+
+
     return render_template('main.html', goods=goods)
 
 
@@ -42,6 +40,14 @@ def productPage():
     if request.method == 'GET':
         goodID = request.args.get('good_id')
 
+    if request.method == 'POST':
+        goodID = request.form['good_id']
+        newDict = session['cart']
+        newDict[goodID] += 1
+        session['cart'] = newDict
+
+
+
     #good = db.session.query(Good).filter(Good.good_id == f'{goodID}')
 
     #good = Good.query.all()
@@ -50,14 +56,40 @@ def productPage():
     good.pop('_sa_instance_state')
     good.pop('photo')
     good.pop('good_id')"""
-
     good = db.session.query(Good).filter(Good.good_id == f'{goodID}').all()[0]
-
-
 
     return render_template('product_page.html', good=good)
 
 
-if __name__ == '__main__':
+@app.route('/cart', methods=['post', 'get'])
+def cartPage():
+    goods = []
+    try:
+        for key in list(session['cart'].keys()):
+            if session['cart'][key] > 0:
+                good = db.session.query(Good).filter(Good.good_id == key).all()
+                good.append(session['cart'][key])
+                goods.append(good)
+    except KeyError:
+        pass
 
-    app.run(debug=True)
+    if request.method == 'POST':
+        if 'cart-good-id' in request.json:
+            goodID = request.json['cart-good-id']
+            newDict = session['cart']
+            newDict[goodID] = 0
+            session['cart'] = newDict
+        if 'good-id' in request.json:
+            goodID = request.json['good-id']
+            count = request.json['count-cart']
+            newDict = session['cart']
+            newDict[goodID] = int(count)
+            session['cart'] = newDict
+
+
+    return render_template('cart_page.html', goods=goods)
+
+
+if __name__ == '__main__':
+    app.run()
+

@@ -2,6 +2,8 @@
     text-align: center;
     width: 83%;
     height:auto;
+    z-index: 1;
+    flex-direction: column;
 }
 
 .product-card {
@@ -13,6 +15,7 @@
     overflow:hidden;
     margin: 20px;
     border-radius: 20px;
+    transition: 0.5s;
     box-shadow: 0px 0px 10px 0.1px gray;
 }
 .product-card:hover {
@@ -64,13 +67,17 @@
     height: 50px;
     width: 50px;
     border-radius: 50px;
+    transition: 0.5s;
     background: #C0C0C0;
     margin-left: 40px;
+    z-index:99999999;
 }
 
 .add-to-cart:hover {
     background: #A9A9A9;
-    transition: all 0.5s ease
+    transition: all 0.5s ease;
+    box-shadow: 0px 0px 5px 1px gray;
+
 }
 
 .add-to-cart:active {
@@ -107,5 +114,4 @@
     border: none;
     padding: 0px;
     border-radius: 20px;
-
 }

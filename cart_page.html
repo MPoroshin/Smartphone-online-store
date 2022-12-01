@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Корзина
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ordering.css') }}">
+{% endblock %}
+
+
+
+
+
+{% block body %}
+
+<div class="back-div">
+        <button class="back" onclick="document.location='/'">
+                <span>❮ Каталог</span>
+        </button>
+    </div>
+
+    <div class="container-main">
+        <div class="cart-canvas">
+            {% for good in goods %}
+                <div class="cart-position">
+                    <div class="div-good-photo">
+                        <img class="good-photo" src="/static/images/{{ good[0].photo }}" alt="">
+                    </div>
+                    <div class="div-title">
+                        <form action="/product-page" method="get">
+                            <input class="good-id-input" type="hidden" name="good_id" value="{{ good[0].good_id }}">
+                            <button class="product-page">
+                                <span class="title">{{ good[0].title }}</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="div-count">
+                        <div class="plus-count">
+                            <img class="img-plus" src="/static/images/plus.png" alt="">
+                            <input class="good-id-input" type="hidden" name="cart-good-id" value="{{ good[0].good_id }}">
+                        </div>
+                        <div class="count">
+                            {{ good[1] }}
+                        </div>
+
+                        <div class="minus-count">
+                            <img class="img-minus" src="/static/images/minus.png" alt="">
+                            <input class="good-id-input" type="hidden" name="cart-good-id" value="{{ good[0].good_id }}">
+                        </div>
+                    </div>
+                    <div class="div-price">
+                        <span class="price">{{ good[0].price }}</span><small>&thinsp;₽</small>
+                    </div>
+                    <div class="div-button-delete">
+                        <button class="button-delete">
+                            <img class="trash" src="/static/images/trash.png" alt="">
+                            <input class="good-id-input" type="hidden" name="cart-good-id" value="{{ good[0].good_id }}">
+                        </button>
+                    </div>
+                    <script src="{{ url_for('static', filename='js/delete_from_cart.js') }}"></script>
+                </div>
+            {% endfor %}
+            <div class="ordering">
+                <div class="div-inputs">
+
+                    <div class="div-name-user-title">
+                        <span class="name-user-title">Как вас зовут:</span>
+                        <input class="name-user-input" type="text" name="name-input" value="" placeholder="Фамилия Имя">
+                    </div>
+                    <div class="div-phone-user-title">
+                        <span class="phone-user-title">Введите ваш номер телефона:</span>
+                        <input class="phone-user-input" type="text" name="phone-input" value="" placeholder="Номер телефона">
+                    </div>
+                    <div class="div-address-user-title">
+                        <span class="address-user-title">Введите адрес, куда доставить заказ:</span>
+                        <input class="address-user-input" type="text" name="address-input" value="" placeholder="Адрес">
+                    </div>
+
+                    <div class="payment">
+                        <span class="payment-title">Выберите метод оплаты:</span>
+                        <div class="payment-method-div">
+                            <div>
+                                <input id="in1" type="radio" name="payment-method" value="bank-card" checked>
+                                <label for="in1">Оплата картой</label>
+                            </div>
+                            <div>
+                                <input id="in2" type="radio" name="payment-method" value="cash">
+                                <label for="in2">Оплата наличными</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="div-order-price-span">
+
+                    <div class="div-summa">
+                        <span>Сумма заказа: </span>
+                        <span class="order-price-span">13500</span>
+                        <small>&thinsp;₽</small>
+                    </div>
+                    <button class="complete-order">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="div-empty-cart">
+        <div>
+            <span class="empty-cart">Ваша корзина пуста</span>
+        </div>
+    </div>
+
+
+<script src="{{ url_for('static', filename='js/count_cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ordering.js') }}"></script>
+<script src="{{ url_for('static', filename='js/completeOrder.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+{% endblock %}

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
+    <link rel="icon" href="data:;base64,=">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -10,20 +11,25 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header align = "left">
-        <ul class="ul-bar">
-            <li class="li-bar"><a href="/">Главная</a></li>
-            <li class="li-bar"><a href="/1234">Про нас</a></li>
-            <li class="li-bar"><a href="/">Каталог</a></li>
-            <li class="li-bar"><a href="/">Информация</a></li>
-        </ul>
-    </header>
 
-    {% block body %}{% endblock %}
+    <header class="header">
+        <div class="header_menu">
+            <ul class="ul-bar">
+                <li class="li-bar"><a href="/">Каталог</a></li>
+                <li class="li-cart"><a href="/cart">Корзина</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main-div">
+        {% block body %}{% endblock %}
+        <script src="{{ url_for('static', filename='js/headerAnimation.js') }}"></script>
+    </div>
+
 
     <footer>
 
     </footer>
 
 </body>
+
 </html>

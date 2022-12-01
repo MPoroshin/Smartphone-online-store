@@ -15,13 +15,14 @@
 
 
 {% block body %}
+
     <div class="container">
         <div class="filter-bar">
 
         </div>
         <div class="grid">
             {% for good in goods %}
-                <div class="product-card">
+                <div class="product-card" id="{{ good.good_id }}">
                     <form action="/product-page" method="get">
                         <button class="product_button">
                             <div class="imageGood">
@@ -40,12 +41,19 @@
                         </div>
                         <div class="div-button">
                             <button class="add-to-cart">
-                            <img class="cart" src="/static/images/cart.png" alt="">
-                        </button>
+                                <img class="cart" src="/static/images/cart.png" alt="">
+                                <input class="good-id-input" type="hidden" name="good_id" value="{{ good.good_id }}">
+                            </button>
+
+
+                            <script src="{{ url_for('static', filename='js/add_to_cart_main.js') }}"></script>
                         </div>
+
                     </div>
                 </div>
             {% endfor %}
+
         </div>
     </div>
+
 {% endblock %}
