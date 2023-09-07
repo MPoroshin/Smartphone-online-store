@@ -1,0 +1,169 @@
+.container-main {
+    display: flex;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 600;
+    font-size:120%;
+}
+
+
+.div-empty-order {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 50px - 65px);
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.div-empty-order div {
+    display: flex;
+    margin-bottom: 120px;
+    background: #C0C0C0;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 21px;
+    width: 300px;
+    box-shadow: 0px 0px 5px 0.1px gray;
+    transition: 0.5s;
+}
+.div-empty-order div:hover {
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 0.5px gray;
+}
+
+.empty-order {
+    font-weight: 600;
+    font-size:150%;
+}
+
+.back-div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.back {
+    margin-left: 15px;
+    width: 200px;
+    display: inline-block;
+    font-size:100%;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    transition: 0.5s;
+
+}
+.back:hover {
+    transition: all 0.2s ease;
+    font-size:101%;
+}
+
+
+.order-canvas {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px;
+    margin-bottom: 30px;
+    background: #C0C0C0;
+    box-shadow: 0px 0px 5px 1px gray;
+}
+
+.order-position {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin: 10px;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0px 0px 5px 1px gray;
+    transition: 0.5s;
+}
+
+
+
+.order-position img {
+    margin: 10px;
+    margin-left: 0px;
+}
+
+
+.good-photo {
+    height: 80px;
+    border-radius: 25px;
+}
+
+.headers {
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.photo {
+    text-align: center;
+    width: 80px;
+    margin-left: 10px;
+}
+
+.title {
+    text-align: center;
+    width: 150px;
+    margin-left: 45px;
+}
+
+.count {
+    text-align: center;
+    width: 150px;
+    margin-left: 55px;
+}
+
+.price {
+    text-align: center;
+    width: 150px;
+    margin-left: 37px;
+}
+
+
+.title-product {
+    margin: 10px;
+    width: 200px;
+}
+
+.count-product {
+    margin: 10px;
+    width: 170px;
+}
+
+.price-product {
+    margin: 10px;
+    width: 170px;
+}
+
+.div-information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 25px;
+    transition: 0.5s;
+    word-break:break-all;
+    max-width: 500px;
+    padding: 10px;
+    line-height: 30px;
+}
+

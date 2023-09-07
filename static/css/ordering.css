@@ -1,0 +1,199 @@
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+
+}
+
+
+.ordering {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 25px;
+    margin: 10px;
+    padding: 40px;
+
+    transition: 0.5s;
+    font-weight: 600;
+    font-size:120%;
+    max-width:100%;
+    transition: 0.5s;
+}
+
+
+.div-inputs {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+
+
+.div-name-user-title {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 410px;
+    transition: 0.5s;
+}
+
+
+.div-phone-user-title {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 410px;
+    transition: 0.5s;
+}
+
+
+.div-address-user-title {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 410px;
+    transition: 0.5s;
+
+}
+
+
+.address-user-input, .name-user-input, .phone-user-input {
+    box-sizing: border-box;
+    width: 400px;
+    height: 30px;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 5px;
+    border: None;
+    background: #DCDCDC;
+    transition: 0.5s;
+}
+
+::placeholder {
+  color: black;
+}
+.div-order-price-span {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: fixed;
+    align-items: center;
+    justify-content: center;
+    margin-left: 85px;
+    transition: 0.5s;
+}
+
+.complete-order {
+    border: none;
+    background: #DCDCDC;
+    width: 170px;
+    height: 50px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size:80%;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 0.5px gray;
+    margin-left: 40px;
+}
+
+.complete-order:hover {
+    transition: 0.5s;
+    background:  #C0C0C0;
+    box-shadow: 0px 0px 7px 0.5px gray;
+
+}
+
+.complete-order:active {
+    transition: 0.5s;
+    background:  #A9A9A9;
+}
+
+.div-summa {
+    font-size: 120%;
+    text-align: right;
+    margin-bottom: 205px;
+    margin-top: 5px;
+    transition: 0.5s;
+    width: 200px;
+    max-width: 200px;
+}
+
+
+.payment {
+    display: flex;
+    flex-directionL column;
+    flex-wrap: wrap;
+    width: 400px;
+    padding: 10px;
+}
+
+
+
+.payment-method-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90%;
+    font-weight: 600;
+    background: #DCDCDC;
+    border-radius: 100px;
+    margin-top: 10px;
+
+}
+
+.payment-method-div div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+
+
+}
+
+.payment-method-div div input {
+    display: none;
+
+}
+.payment-method-div div label {
+	user-select: none;
+	padding: 10px;
+	padding-right: 26.5px;
+    padding-left: 27px;
+    border-radius: 20px;
+
+
+}
+
+.payment-method-div div input:checked + label {
+    transition: 0.5s;
+    margin: 0 auto;
+    background: #A9A9A9;
+    border-radius: 20px;
+    padding: 10px;
+    padding-right: 26.5px;
+    padding-left: 27px;
+
+}
+
+.div-error {
+    display: None;
+    justify-content: center;
+    align-items: center;
+    background: #DCDCDC;
+    height: 80px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 0px 5px 0.5px gray;
+    transition: 0.5s;
+
+}
+
+.span-error {
+    font-size: 120%;
+    font-weight: 600;
+    transition: 0.5s;
+}

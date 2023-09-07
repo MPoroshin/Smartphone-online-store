@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Заказы
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order_page.css') }}">
+{% endblock %}
+
+
+
+
+{% block body %}
+    <div class="back-div">
+        <button class="back" onclick="document.location='/'">
+                <span>❮ Каталог</span>
+        </button>
+    </div>
+    {% if orders|length != 0 %}
+        <div class="container-main">
+
+
+            {% for order in orders %}
+                <div class="order-canvas">
+                    <div class="headers">
+                        <span class="photo">Фото</span>
+                        <span class="title">Название</span>
+                        <span class="count">Количество</span>
+                        <span class="price">Цена</span>
+                    </div>
+                    {% for good in order[1] %}
+                            <div class="order-position">
+                            <img class="good-photo" src="/static/images/{{ good[4] }}" alt="">
+                            <span class="title-product">{{ good[2] }}</span>
+                            <span class="count-product">{{ good[1] }}</span>
+                            <span class="price-product">{{ good[3] }}</span>
+                        </div>
+                    {% endfor %}
+                    <div class="div-information">
+                        <span>Имя и Фамилия: {{ order[0][1] }}</span>
+                        <span>Сумма заказа: {{ order[0][0] }}</span>
+                        <span>Метод оплаты: {{ order[0][3] }}</span>
+                        <span>Телефон: {{ order[0][4] }}</span>
+                        <span>Адрес: {{ order[0][2] }}</span>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    {% else %}
+        <div class="div-empty-order" id="bottom">
+            <div>
+                <span class="empty-order">Заказов нет</span>
+            </div>
+        </div>
+    {% endif %}
+
+
+{% endblock %}

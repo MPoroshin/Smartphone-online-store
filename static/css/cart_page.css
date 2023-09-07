@@ -1,0 +1,284 @@
+.container-main {
+    display: flex;
+    height: auto;
+    width: 100%;
+    align-items: start;
+    justify-content: center;
+
+}
+
+
+.cart-canvas {
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px;
+    margin-bottom: 30px;
+    background: #C0C0C0;
+    box-shadow: 0px 0px 5px 1px gray;
+}
+
+.cart-position {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin: 10px;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0px 0px 5px 1px gray;
+    transition: 0.5s;
+}
+.cart-position:hover {
+    box-shadow: 0px 0px 5px 3px gray;
+    transition: 0.5s;
+}
+
+
+
+
+
+.div-good-photo {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    background: white;
+    border-radius: 25px 0px 0px 25px;
+
+}
+.good-photo {
+    height: 80px;
+    border-radius: 25px;
+}
+
+
+
+
+.product-page {
+    border: none;
+    background: transparent;
+}
+
+.div-title {
+
+}
+.title {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 80px;
+    width: 400px;
+    font-weight: 600;
+    font-size:150%;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s;
+}
+
+.title:hover {
+    transition: 0.1s;
+    text-decoration: underline;
+    color: #696969;
+
+}
+
+.div-count {
+    display: flex;
+    flex-wrap: nowrap;
+
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size:130%;
+
+    background:#C0C0C0;
+    border-radius: 55px;
+    box-shadow: 0px 0px 5px 1px gray;
+
+
+
+}
+.count {
+    text-align: center;
+    width: 35px;
+}
+.plus-count {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 55px;
+    transition: 0.5s;
+}
+.plus-count:hover {
+    transition: 0.5s;
+    background:  #A9A9A9;
+    box-shadow: 0px 0px 5px 1px gray;
+}
+.plus-count:active {
+    transition: 0.5s;
+    background:  #808080;
+}
+
+
+.minus-count {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 55px;
+    transition: 0.5s;
+
+}
+.minus-count:hover {
+    transition: 0.5s;
+    background:  #A9A9A9;
+    box-shadow: 0px 0px 5px 1px gray;
+}
+
+.minus-count:active {
+    transition: 0.5s;
+    background:  #808080;
+}
+
+
+.img-plus {
+    height: 17px;
+    user-select: none;
+}
+.img-minus {
+    height: 17px;
+    user-select: none;
+}
+
+
+
+.div-price {
+    display: flex;
+    flex-wrap: nowrap;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 140px;
+    font-weight: 600;
+    font-size:120%;
+
+}
+
+.price {
+
+}
+
+
+
+
+
+
+.div-button-delete {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 70px;
+    width: 70px;
+    border-radius: 0px 25px 25px 0px;
+    background: white;
+    justify-content: center;
+    margin-right: 5px;
+    transition: 0.5s;
+}
+.button-delete {
+    border-radius: 24px;
+    border: none;
+    transition: 0.5s;
+    background: white;
+    width: 100%;
+}
+
+.button-delete:hover {
+    background: #F5F5F5;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 0.5px gray;
+}
+
+.button-delete:active {
+    background: #E0E0E0;
+    transition: 0.5s;
+}
+
+.trash {
+    height: 30px;
+}
+
+
+
+
+.div-empty-cart {
+    display: none;
+
+    width: 100%;
+    height: calc(100% - 50px - 65px);
+    justify-content: center;
+    align-items: center;
+
+}
+
+.div-empty-cart div {
+    display: flex;
+    margin-bottom: 120px;
+    background: #C0C0C0;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 21px;
+    width: 300px;
+    box-shadow: 0px 0px 5px 0.1px gray;
+    transition: 0.5s;
+}
+.div-empty-cart div:hover {
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 0.5px gray;
+}
+
+.empty-cart {
+    font-weight: 600;
+    font-size:150%;
+}
+
+.back-div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.back {
+    margin-left: 15px;
+    width: 200px;
+    display: inline-block;
+    font-size:100%;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    transition: 0.5s;
+
+}
+.back:hover {
+    transition: all 0.2s ease;
+    font-size:101%;
+}
+
+
+
+

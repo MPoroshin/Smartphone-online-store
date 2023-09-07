@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_page.css') }}">
+{% endblock %}
+
+{% block title %}
+    Страница товара
+{% endblock %}
+
+{% block body %}
+{{ s }}
+<div class="back-div">
+        <button class="back" onclick="document.location='/'">
+                <span>❮ Каталог</span>
+        </button>
+    </div>
+<div class="container-main">
+
+    <div class="product">
+            <div class="product-page-card">
+                <div class="div-image">
+                    <img class="good-page-image" src="/static/images/{{ good.photo }}" alt="">
+                </div>
+                <div class="div-info">
+                    <div class="div-info-title">
+                        <ul class="ul-info">
+                            <li class="good-title">{{ good.title }}</li>
+                        </ul>
+                    </div>
+                    <div class="div-info-characteristic">
+                        <ul class="ul-info">
+                            <li class="good-characteristic">Экран: {{ good.display }}</li>
+                            <li class="good-characteristic">Оперативная память: {{ good.ram }}</li>
+                            <li class="good-characteristic">Память: {{ good.memory }}</li>
+                            <li class="good-characteristic">Камера: {{ good.camera }}</li>
+                            <li class="good-characteristic">Аккумулятор: {{ good.battery }}</li>
+                            <li class="good-characteristic">Процессор: {{ good.processor }}</li>
+                            <li class="good-characteristic">Слот для карты памяти: {{ good.cardSlot }}</li>
+                            <li class="good-characteristic">Операционная система: {{ good.os }}</li>
+                            <li class="good-characteristic">Связь: {{ good.connection }}</li>
+                            <li class="good-characteristic">Вес: {{ good.weight }}</li>
+                        </ul>
+                    </div>
+                    <div class="div-info-price">
+                        <ul class="ul-info">
+                            <li class="good-price">{{ good.price }}<small> ₽</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="order-and-cart">
+
+                <div class="order">
+                    <button class="button-order">
+                        <span class="span-order">Оформить заказ</span>
+                        <input class="good-id-input" type="hidden" name="good_id" value="{{ good.good_id }}">
+                    </button>
+                    <script src="{{ url_for('static', filename='js/add_to_cart_product_order_button.js') }}"></script>
+                </div>
+
+                <div class="cart">
+                    <button class="button-cart">
+                        <span class="span-cart">Положить в корзину</span>
+                        <input class="good-id-input" type="hidden" name="good_id" value="{{ good.good_id }}">
+                    </button>
+                    <script src="{{ url_for('static', filename='js/add_to_cart_product.js') }}"></script>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
